@@ -1,0 +1,31 @@
+create table employees(
+employee_id int primary key auto_increment,
+fname varchar(128) not null,
+last_name varchar(128) not null,
+email varchar(128) not null,
+phone varchar(128) not null);
+select * from employees;
+
+alter table employees
+add  salary numeric(9,2);
+
+alter table employees
+modify column salary integer;
+
+alter table employees
+change fname first_name varchar(128);
+
+alter table employees
+drop column phone;
+
+alter table employees
+add column department varchar(128) not null;
+
+insert into employees(first_name,last_name,email,salary,department)
+values ('Oleg', 'Petrov','petrov@gmail.com', 4000, 'Education'),
+	   ('Olga', 'Petrova','petrova@gmail.com', 3500, 'Foreign students'),
+	   ('Alexandr', 'Ivanov','ivanov@gmail.com', 2700, 'Teachers'),
+       ('Alexandra', 'Ivanova','ivanova@gmail.com', 2000, 'International exchange'),
+       ('Inna', 'Miller','miller@gmail.com', 1700, 'Healthy'),
+	   ('Anton', 'Enger','enger@gmail.com', 2600, 'Projeckts'),
+       ('Magomed', 'Magomedov','magomedov@gmail.com', 1500, 'Sport') ;
